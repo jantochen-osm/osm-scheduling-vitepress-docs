@@ -10,7 +10,7 @@
 
 ```text
 20~50 条 MO 订单样例
-5~10 个 FG Item Code
+5~10 个 ItemId（成品料号）
 3F3~3F6 产线主数据
 对应 Assembly UPPH
 至少 2 周工作日历
@@ -37,14 +37,14 @@ Stage 1 最少需要 Assembly 工段。
 
 示例：
 
-| FG Item Code | RouteId | OperationSeq | OperationCode | OperationName | ProcessType |
+| ItemId | RouteId | OperationSeq | OperationCode | OperationName | ProcessType |
 | --- | --- | --- | --- | --- | --- |
 | ITEM001 | R001 | 10 | ASM | Assembly | Assembly |
 | ITEM002 | R002 | 10 | ASM | Assembly | Assembly |
 
 Stage 2 才需要扩展多工段：
 
-| FG Item Code | RouteId | OperationSeq | OperationCode | OperationName | ProcessType |
+| ItemId | RouteId | OperationSeq | OperationCode | OperationName | ProcessType |
 | --- | --- | --- | --- | --- | --- |
 | ITEM003 | R003 | 10 | CUT | Cutting | Cutting |
 | ITEM003 | R003 | 20 | ASM | Assembly | Assembly |
@@ -63,24 +63,18 @@ Stage 1 必须准备：
 
 ## 5. UPPH 样例要求
 
-| lineCode | FG Item Code | processType | UPPH | 说明 |
+| lineCode | ItemId | processType | UPPH | 说明 |
 | --- | --- | --- | --- | --- |
-| 3F3 | ITEM001 | Assembly | 100 | 线体级 UPPH 示例 |
-| 3F4 | ITEM001 | Assembly | 90 | 线体级 UPPH 示例 |
-| 3F5 | ITEM001 | Assembly | 95 | 线体级 UPPH 示例 |
-| 3F6 | ITEM001 | Assembly | 80 | 线体级 UPPH 示例 |
+| 3F3 | ITEM001 | Assembly | 100 | 人均 UPPH 示例 |
+| 3F4 | ITEM001 | Assembly | 90 | 人均 UPPH 示例 |
+| 3F5 | ITEM001 | Assembly | 95 | 人均 UPPH 示例 |
+| 3F6 | ITEM001 | Assembly | 80 | 人均 UPPH 示例 |
 
 ::: warning 重要
-Stage 0 必须确认 UPPH 的业务含义。它到底是：
-
-- 线体每小时产出？
-- 人均每小时产出？
-- 产品在某工段的标准产出？
-- 产品在某条线的标准产出？
-
-如果不确认，Stage 1 的产能计算会有偏差。
+Stage 0 已确认 UPPH 的业务含义：
+- 人均每小时产出（Units Per Person Per Hour）
+- 产能公式：日可产数量 = UPPH × 人数 × 工作小时
 :::
-
 ## 6. 日历样例要求
 
 至少准备连续 2 周日历：

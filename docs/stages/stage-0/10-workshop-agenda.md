@@ -53,11 +53,12 @@ Stage 0 建议通过 2~3 次工作坊完成业务确认。
 
 | 时间 | 主题 | 输出 |
 | --- | --- | --- |
-| 25 min | UPPH 口径确认 | 产能口径说明 |
+| 15 min | UPPH 口径确认（已确认：人均每小时产出） | 产能口径说明 |
+| 20 min | 排班人数（Headcount）数据来源确认 | Headcount 维护方案 |
 | 20 min | 3F3~3F6 产线产能确认 | capacity 样例 |
 | 20 min | 工作日历规则确认 | calendar 样例 |
 | 20 min | 异常字典确认 | exception dictionary |
-| 20 min | Stage 1 准入清单确认 | validation checklist |
+| 15 min | Stage 1 准入清单确认 | validation checklist |
 
 ## 会议纪要模板
 

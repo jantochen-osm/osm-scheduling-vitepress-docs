@@ -17,16 +17,16 @@ Stage 0 应先定义异常类型，而不是等系统开发后再补。
 | exceptionType | 触发条件 | 级别 | 建议动作 |
 | --- | --- | --- | --- |
 | MISSING_DLV_DATE | DlvDate 为空 | BLOCKER | 补交期 |
-| INVALID_QTY | Qty <= 0 | BLOCKER | 确认订单数量 |
+| INVALID_QTY | QtySched ≤ 0 | BLOCKER | 确认订单数量 |
 | UNKNOWN_OSM_CATEGORY | OSM_Category 为空或不是 EE/ESG | BLOCKER | 维护分类 |
-| POOL_NOT_INCLUDED | Pool 不在白名单 | INFO | 不进入排产池 |
-| STATUS_FINISHED | Status 已结束 | INFO | 不进入排产池 |
+| POOL_NOT_INCLUDED | ProdPoolId 不在白名单 | INFO | 不进入排产池 |
+| STATUS_FINISHED | ProdStatus 已结束 | INFO | 不进入排产池 |
 
 ## 3. 工艺异常
 
 | exceptionType | 触发条件 | 级别 | 建议动作 |
 | --- | --- | --- | --- |
-| MISSING_ROUTE | FG Item Code 找不到路线 | BLOCKER | 维护路线 |
+| MISSING_ROUTE | ItemId 找不到路线 | BLOCKER | 维护路线 |
 | MISSING_ASSEMBLY_OPERATION | Stage 1 找不到 Assembly 工段 | BLOCKER | 确认路线或 ProcessType 映射 |
 | UNKNOWN_PROCESS_TYPE | 工段无法标准化 | BLOCKER | 维护 ProcessType 字典 |
 | MISSING_OPERATION_SEQ | 工段顺序为空 | WARNING/BLOCKER | Stage 1 可不阻断，Stage 2 阻断 |
@@ -60,8 +60,8 @@ Stage 0 应先定义异常类型，而不是等系统开发后再补。
 
 ```text
 runId
-MO
-FGItemCode
+ProdId
+ItemId
 operationCode
 exceptionType
 severity

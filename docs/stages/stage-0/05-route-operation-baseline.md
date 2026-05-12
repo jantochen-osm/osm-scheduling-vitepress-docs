@@ -2,12 +2,12 @@
 
 工艺路线是排产系统的核心输入之一。
 
-Stage 0 必须确认：**FG Item Code 如何找到工艺路线，以及工艺路线如何拆解为标准工段。**
+Stage 0 必须确认：**ItemId（成品料号）如何找到工艺路线，以及工艺路线如何拆解为标准工段。**
 
 ## 1. 工艺路线基本链路
 
 ```text
-FG Item Code
+ItemId（成品料号）
   ↓
 RouteId
   ↓
@@ -50,7 +50,7 @@ ProcessType = Assembly
 Stage 1 只需要确认：
 
 ```text
-FG Item Code 能查到至少一个 ProcessType = Assembly 的工段。
+ItemId 能查到至少一个 ProcessType = Assembly 的工段。
 ```
 
 若查不到，进入异常：
@@ -79,7 +79,7 @@ SemiFinished → Assembly → Package
 
 | 异常类型 | 触发条件 | 处理方式 |
 | --- | --- | --- |
-| MISSING_ROUTE | FG Item Code 找不到路线 | 阻断订单排产 |
+| MISSING_ROUTE | ItemId 找不到路线 | 阻断订单排产 |
 | MISSING_OPERATION_SEQ | OperationSeq 为空 | 阻断多工段排产 |
 | UNKNOWN_PROCESS_TYPE | OperationName 无法标准化 | 进入工艺异常 |
 | MISSING_ASSEMBLY_OPERATION | Stage 1 场景找不到 Assembly | 阻断 Stage 1 排产 |

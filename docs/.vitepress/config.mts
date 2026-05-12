@@ -17,26 +17,6 @@ export default defineConfig({
       { text: '参考', link: '/reference/' }
     ],
     sidebar: {
-      '/stages/stage-0-foundation/': [
-        {
-          text: 'Stage 0 详细拆分',
-          items: [
-            { text: '总览', link: '/stages/stage-0-foundation/' },
-            { text: '00 阶段总览', link: '/stages/stage-0-foundation/00-overview' },
-            { text: '01 业务边界确认', link: '/stages/stage-0-foundation/01-business-boundary' },
-            { text: '02 数据源与字段映射', link: '/stages/stage-0-foundation/02-data-source-mapping' },
-            { text: '03 样例数据准备', link: '/stages/stage-0-foundation/03-sample-data' },
-            { text: '04 主数据基线', link: '/stages/stage-0-foundation/04-master-data-baseline' },
-            { text: '05 工艺路线与工段基线', link: '/stages/stage-0-foundation/05-route-operation-baseline' },
-            { text: '06 产能与日历口径', link: '/stages/stage-0-foundation/06-capacity-calendar-baseline' },
-            { text: '06a 产能工时池模型', link: '/stages/stage-0-foundation/06a-capacity-hour-pool' },
-            { text: '07 异常字典设计', link: '/stages/stage-0-foundation/07-exception-dictionary' },
-            { text: '08 验证清单', link: '/stages/stage-0-foundation/08-validation-checklist' },
-            { text: '09 交付物模板', link: '/stages/stage-0-foundation/09-deliverables' },
-            { text: '10 工作坊议程', link: '/stages/stage-0-foundation/10-workshop-agenda' }
-          ]
-        }
-      ],
       '/stages/': [
         {
           text: '阶段化实现路径',
@@ -47,16 +27,20 @@ export default defineConfig({
               collapsed: false,
               items: [
                 { text: '阶段入口', link: '/stages/stage-0/' },
-                { text: '阶段总览', link: '/stages/stage-0/overview' },
-                { text: '业务边界确认', link: '/stages/stage-0/scope' },
-                { text: '输入数据与字段清单', link: '/stages/stage-0/data-inputs' },
-                { text: '数据对象设计', link: '/stages/stage-0/data-objects' },
-                { text: '处理流程', link: '/stages/stage-0/process' },
-                { text: '输出结果与验收标准', link: '/stages/stage-0/acceptance' },
-                { text: '风险与控制措施', link: '/stages/stage-0/risks' },
+                { text: '00 阶段总览', link: '/stages/stage-0/00-overview' },
+                { text: '01 业务边界确认', link: '/stages/stage-0/01-business-boundary' },
+                { text: '02 数据源与字段映射', link: '/stages/stage-0/02-data-source-mapping' },
+                { text: '03 样例数据准备', link: '/stages/stage-0/03-sample-data' },
+                { text: '04 主数据基线', link: '/stages/stage-0/04-master-data-baseline' },
+                { text: '05 工艺路线与工段基线', link: '/stages/stage-0/05-route-operation-baseline' },
+                { text: '06 产能与日历口径', link: '/stages/stage-0/06-capacity-calendar-baseline' },
+                { text: '06a 产能工时池模型', link: '/stages/stage-0/06a-capacity-hour-pool' },
+                { text: '07 异常字典设计', link: '/stages/stage-0/07-exception-dictionary' },
+                { text: '08 验证清单', link: '/stages/stage-0/08-validation-checklist' },
+                { text: '09 交付物模板', link: '/stages/stage-0/09-deliverables' },
+                { text: '10 工作坊议程', link: '/stages/stage-0/10-workshop-agenda' },
               ]
             },
-            { text: 'Stage 0 详细拆分', link: '/stages/stage-0-foundation/' },
             { text: '阶段 1：EE Assembly 单场景 MVP', link: '/stages/stage-1/' },
             { text: '阶段 2：EE 多工段与完整规则', link: '/stages/stage-2/' },
             { text: '阶段 3：ESG 专线场景扩展', link: '/stages/stage-3/' },

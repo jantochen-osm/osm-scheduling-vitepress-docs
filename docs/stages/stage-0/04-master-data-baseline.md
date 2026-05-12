@@ -50,11 +50,10 @@ Stage 0 不要求完整产品库，但至少要有样例产品：
 
 | 字段 | 说明 |
 | --- | --- |
-| FG Item Code | 成品料号 |
+| ItemId | 成品料号 |
 | ProductName | 产品名称 |
 | OSM_Category | EE / ESG |
-| CustomerCode | 客户编码 |
-| Brand | 品牌 |
+| KeyAccount | 客户编码 |
 | RouteId | 默认工艺路线 |
 | IsSpecialLineProduct | 是否专线产品 |
 

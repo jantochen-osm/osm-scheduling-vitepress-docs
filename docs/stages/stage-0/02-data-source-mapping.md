@@ -20,21 +20,20 @@
 
 | 标准字段 | 来源系统 | 来源字段 | 类型 | 必填 | 示例 | 说明 |
 | --- | --- | --- | --- | --- | --- | --- |
-| MO | AX 2012 / 中间库 | 待确认 | string | 是 | MO12345 | 制造订单号 |
-| FGItemCode | AX 2012 / 中间库 | 待确认 | string | 是 | FA014A02 | 成品料号 |
-| Qty | AX 2012 / 中间库 | 待确认 | number | 是 | 2500 | 订单数量或剩余待产数量 |
-| DlvDate | AX 2012 / 中间库 | 待确认 | date | 是 | 2026-05-20 | 交货日期 |
-| Status | AX 2012 / 中间库 | 待确认 | string | 是 | Released | 订单状态 |
-| Pool | AX 2012 / 中间库 | 待确认 | string | 是 | SC_YBSC_F3 | 订单池 |
-| OSM_Category | AX 2012 / 中间库 | 待确认 | string | 是 | EE | OSM 分类 |
-| CustomerCode | AX 2012 / 中间库 | 待确认 | string | 否 | C001 | 客户编码 |
-| Brand | AX 2012 / 中间库 | 待确认 | string | 否 | Amazon | 品牌或客户属性 |
+| ProdId | AX 2012 / 中间库 | 确认 | string | 是 | ZMO00007207 | 制造订单号 |
+| ItemId | AX 2012 / 中间库 | 确认 | string | 是 | B04AA02A00011.0A | 成品料号 |
+| QtySched | AX 2012 / 中间库 | 确认 | number | 是 | 2500 | 订单数量 |
+| DlvDate | AX 2012 / 中间库 | 确认 | date | 是 | 2026-05-20 | 交货日期 |
+| ProdStatus | AX 2012 / 中间库 | 确认 | string | 是 | Started | 订单状态 |
+| ProdPoolId | AX 2012 / 中间库 | 确认 | string | 是 | SC_YBSC_F3 | 订单池 |
+| OSM_Category | AX 2012 / 中间库 | 确认 | string | 是 | EE | OSM 分类 |
+| KeyAccount | AX 2012 / 中间库 | 确认 | string | 否 | 3M CSWB-St. Paul | 客户编码 |
 
 ## 3. 工艺路线字段映射模板
 
 | 标准字段 | 来源系统 | 来源字段 | 类型 | 必填 | 示例 | 说明 |
 | --- | --- | --- | --- | --- | --- | --- |
-| FGItemCode | AX 2012 / 中间库 | 待确认 | string | 是 | FA014A02 | 成品料号 |
+| ItemId | AX 2012 / 中间库 | 确认 | string | 是 | B04AA02A00011.0A | 成品料号 |
 | RouteId | AX 2012 / 中间库 | 待确认 | string | 是 | R001 | 路线编号 |
 | OperationSeq | AX 2012 / 中间库 | 待确认 | number | 是 | 10 | 工段顺序 |
 | OperationCode | AX 2012 / 中间库 | 待确认 | string | 是 | ASM | 工序编码 |
@@ -57,11 +56,11 @@ Stage 0 必须检查：
 
 ```text
 1. DlvDate 是否为空。
-2. Qty 是否小于等于 0。
-3. Pool 是否在 OSM 白名单中。
+2. QtySched 是否小于等于 0。
+3. ProdPoolId 是否在 OSM 白名单中。
 4. OSM_Category 是否只包含 EE / ESG。
-5. FG Item Code 是否为空。
-6. FG Item Code 是否能查到路线。
+5. ItemId 是否为空。
+6. ItemId 是否能查到路线。
 7. OperationSeq 是否为空或重复。
 8. ProcessType 是否能标准化。
 ```
